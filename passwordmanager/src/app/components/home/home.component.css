@@ -1,0 +1,10 @@
+.inputflex {
+    display:flex;
+    
+}
+
+.input{
+    display:flex;
+    border: 1px groove #697993;
+    flex-flow: column;
+}

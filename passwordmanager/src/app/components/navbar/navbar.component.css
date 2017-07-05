@@ -4,7 +4,6 @@
     height:50px;
     width: 100%;
     flex-direction:row;
-    position: fixed;
     
 }
 
@@ -13,11 +12,10 @@
 
 
 }
-
 #one {
     color:silver;
     display:flex;
-    align-self:center;
+    align-items:center;
     justify-content: center;
 
 }
@@ -26,10 +24,16 @@
     color:silver;
     border-left: 2px solid silver;
     border-right: 2px solid silver;
+    display:flex;
 }
 
 .box {
     margin-top:0px;
     margin:30px 30px 10px 10px;
+    margin-bottom:20px;
     align-self: center;
+}
+
+.nav:hover {
+    background-color:#696969;
 }
