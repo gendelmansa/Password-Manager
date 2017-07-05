@@ -1,0 +1,58 @@
+<head>
+    <link rel="stylesheet" href="login.component.css">
+</head>
+
+<body>
+
+
+<div class="parentflexcontainer">
+
+    <div class = "icon">
+
+    </div>
+   
+    <div class="flexcontainer">
+        
+        <div class = "flextext">
+            
+            <h1 id="header"><img src = 'passwordicon.ico'></h1>
+        
+        </div>
+
+    </div>
+    
+    <div class = "flexcontainer">
+        
+            <div class = "childflex">
+                
+                <input id = "username" type="text" placeholder="email" required = "required">
+            
+            </div>
+    </div>
+   
+    <div class = "flexcontainer">
+        
+        <div class = "childflex">
+
+            <input id ="pass" type="text" placeholder="password" required="required">
+        
+        </div>
+
+    </div>
+
+    <div class = "flexcontainer">
+            <div id="one">
+                
+        <button  class="button" name="login" type ="button"><strong><span>Login</span></strong></button>
+       
+        <h4>Don't have an account:</h4>
+         
+        <div *ngIf = 'newprofile'>{{register}}</div>
+            <button class = "button" (click) = toggleregister()>Register</button>
+
+             </div>
+    </div>
+
+</div>
+
+</body>
