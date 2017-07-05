@@ -1,0 +1,35 @@
+.parentflex {
+    display:inline-flex;
+    background-color: black;
+    height:50px;
+    width: 100%;
+    flex-direction:row;
+    position: fixed;
+    
+}
+
+.childflex {
+    display:flex;
+
+
+}
+
+#one {
+    color:silver;
+    display:flex;
+    align-self:center;
+    justify-content: center;
+
+}
+
+#two {
+    color:silver;
+    border-left: 2px solid silver;
+    border-right: 2px solid silver;
+}
+
+.box {
+    margin-top:0px;
+    margin:30px 30px 10px 10px;
+    align-self: center;
+}
