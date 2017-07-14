@@ -1,10 +1,8 @@
-.inputflex {
-    display:flex;
-    
+body {
+    background-image:url('KeyLock.ico');
+    background-size: cover;
 }
 
-.input{
-    display:flex;
-    border: 1px groove #697993;
-    flex-flow: column;
+.parentflex{
+    display:inline-flex;
 }

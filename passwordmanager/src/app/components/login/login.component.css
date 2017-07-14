@@ -46,16 +46,13 @@
 
 input {
     border: 1px groove #697993;
-}
-
-::placeholder{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:18px;
     color:#686867;
 }
 
-input {
-     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+::placeholder{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:18px;
     color:#686867;
 }
