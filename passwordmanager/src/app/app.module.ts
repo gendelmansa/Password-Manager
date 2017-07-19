@@ -22,7 +22,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ RouterModule.forRoot(appRoutes), BrowserModule, BrowserAnimationsModule, FormsModule ],
-  declarations: [ AppComponent, LoginComponent, NavbarComponent, RegisterComponent, HomeComponent, SidebarComponent, ],
+  declarations: [ AppComponent, LoginComponent, NavbarComponent, RegisterComponent, HomeComponent, SidebarComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule {

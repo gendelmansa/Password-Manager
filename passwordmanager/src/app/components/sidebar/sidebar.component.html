@@ -11,11 +11,9 @@
         <img class = "header" src = 'passwordicon.ico'>
             </div>
 
-            <ul>
+        <ul *ngFor='let name of sidetext'>
        
-        <li class ="barcomp" *ngFor='let text of sidetext' [@hover] = 'text' (mouseenter)="toggleState()" (mouseleave)="toggleState()">
-           
-          <h4 class = 'comp'> {{ name.text }}</h4>
+        <li class ="barcomp"  [@hover] = 'name.state' (mouseenter) = 'name.toggleState()' (mouseleave) = 'name.toggleState()'>          <h4 class = 'comp'>{{ name.text }}</h4>
 
         </li>
 

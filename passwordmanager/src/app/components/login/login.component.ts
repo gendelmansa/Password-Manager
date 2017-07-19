@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition} from '@angular/animations';
+ 
+import { LoginText, LOGINTEXT } from './logintext'
 
 @Component({
   
@@ -9,7 +11,7 @@ import { trigger, state, style, animate, transition} from '@angular/animations';
       
       state('inactive', style({
        
-        backgroundColor: '#eee',
+        backgroundColor: '#404040',
       
         transform: 'scale(1)'
     
@@ -19,7 +21,7 @@ import { trigger, state, style, animate, transition} from '@angular/animations';
 
         backgroundColor:'#696969',
 
-        transform: 'scale(1.1)'
+        transform: 'scale(1)'
       
     })),
 
@@ -37,10 +39,24 @@ import { trigger, state, style, animate, transition} from '@angular/animations';
   templateUrl: './login.component.html',
 })
 export class LoginComponent  { 
+
+  logintext = LOGINTEXT
+  
+  loginmessage = ['Forgot your password: ', 'Do not have an account: ']
+ toggleStateOne() {
+   this.logintext[0].state = (this.logintext[0].state === 'active' ? 'inactive' : 'active')
+  
+
+}
  
   newprofile = false;
+  
+  
   
   toggleregister() {
     this.newprofile=!this.newprofile
   }
+
+  constructor(){console.log(this.logintext)
+  console.log(this.logintext[0].state)}
 }

@@ -42,19 +42,26 @@
 
     <div class = "flexcontainer">
             <div id="one">
-                
-        <button  class="button" name="login"
-        [@btnclick]="btn.click"
-        (click)="btn.toggleState()"><strong><span>Login</span></strong></button>
+        <ul *ngFor = "let text of logintext">
 
+        <li>
+            <h4>{{loginmessage[1]}}</h4>
+            
+        <button  class="button" name= {{text.name}} 
+        ><strong><span>{{text.name}}</span></strong></button>
+
+        </li>
+
+        </ul>        
+        
         <h4>Forgot your password: </h4>
 
-        <button class = "button" name="forgot">forgot</button>
+        <button class = "button" name="forgot" [@btnClick] = 'logintext[1].state' (click) = 'logintext[1].togglestate()'>{{logintext[1].name}}</button>
        
         <h4>Don't have an account:</h4>
          
         <div *ngIf = 'newprofile'><register></register></div>
-            <button class = "button" (click) = toggleregister()>register</button>
+            <button class = "button" (click) = toggleregister() [@btnClick] = 'logintext[2].state' (click) = 'logintext[2].togglestate()'>{{logintext[2].name}}</button>
 
              </div>
     </div>

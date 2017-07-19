@@ -7,6 +7,8 @@ import { SideBarText } from './components/sidebar/sidebartext'
   templateUrl: './app.component.html',
 })
 
+
+
 export class AppComponent  {
   
 
