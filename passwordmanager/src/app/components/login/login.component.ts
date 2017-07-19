@@ -11,7 +11,7 @@ import { LoginText, LOGINTEXT } from './logintext'
       
       state('inactive', style({
        
-        backgroundColor: '#404040',
+        backgroundColor: '#698095',
       
         transform: 'scale(1)'
     
@@ -19,13 +19,15 @@ import { LoginText, LOGINTEXT } from './logintext'
 
       state('active', style({
 
-        backgroundColor:'#696969',
+        backgroundColor:'#698095',
+
+        border: '3px #697993 inset',
 
         transform: 'scale(1)'
       
     })),
 
-    transition('inactive => active', animate('100ms ease-in')),
+   
     
     transition('active => inactive', animate('100ms ease-out'))
    
@@ -42,21 +44,23 @@ export class LoginComponent  {
 
   logintext = LOGINTEXT
   
-  loginmessage = ['Forgot your password: ', 'Do not have an account: ']
- toggleStateOne() {
-   this.logintext[0].state = (this.logintext[0].state === 'active' ? 'inactive' : 'active')
   
-
+  state:string = 'inactive'
+   
+  toggleState(){
+  this.state = (this.state === 'active' ? 'inactive' : 'active');
+    setTimeout(()=>{this.state = (this.state === 'active' ? 'inactive' : 'inactive')}, 50)
 }
+
  
   newprofile = false;
   
   
   
-  toggleregister() {
+  toggleRegister() {
     this.newprofile=!this.newprofile
   }
 
   constructor(){console.log(this.logintext)
-  console.log(this.logintext[0].state)}
+  console.log(this.logintext)}
 }
