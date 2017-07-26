@@ -1,0 +1,28 @@
+
+<div class="parentflex">
+
+    <div class = "bar">
+        
+        <div class = "flexbar">
+
+            <div class ="titlecomp">
+        <img class = "header" src = 'https://cdn.pbrd.co/images/GCKrDJt.vnd.microsoft.icon'>
+            </div>
+
+        <ul *ngFor='let name of sidetext'>
+       
+        <li class ="barcomp"  [@hover] = 'name.state' (mouseenter) = 'name.toggleState()' (mouseleave) = 'name.toggleState()'>          <h4 class = 'comp'>{{ name.text }}</h4>
+
+        </li>
+
+            </ul>
+
+            <div class = "imgcomp">
+        <img id="logo" src ="https://cdn.pbrd.co/images/GCKpLx8.vnd.microsoft.icon">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

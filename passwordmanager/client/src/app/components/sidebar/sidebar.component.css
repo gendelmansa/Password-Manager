@@ -1,0 +1,45 @@
+
+
+.bar {
+    background-color:#585858;
+    align-items: flex-start;
+    height:1000px;
+    border: solid #585858 1px;
+}
+
+#logo {
+display:flex;
+justify-content: flex-start;
+margin-left:62px;
+height:160px;
+margin-right:62px;
+}
+
+.barflex{
+    display:flex;
+    }
+
+.barcomp {
+    display:flex;
+    height:40px;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    justify-content:center;
+    
+    
+} 
+
+.header {
+    height:240px;
+    margin-left:20px;
+}
+
+.comp {
+    color:silver;
+font-size:20px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.barcomp:hover {
+   background-color:#696969;
+}

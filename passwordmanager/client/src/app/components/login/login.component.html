@@ -1,0 +1,62 @@
+
+
+<body>
+
+
+<div class="parentflexcontainer">
+
+    <div class = "icon">
+
+    </div>
+   
+    <div class="flexcontainer">
+        
+        <div class = "flextext">
+            
+            <h1 id="header"><img src = 'https://cdn.pbrd.co/images/GCKrDJt.vnd.microsoft.icon'></h1>
+        
+        </div>
+
+    </div>
+    
+    <div class = "flexcontainer">
+        
+            <div class = "childflex">
+                
+                <input id = "username" type="text" placeholder="email" required = "required">
+            
+            </div>
+    </div>
+   
+    <div class = "flexcontainer">
+        
+        <div class = "childflex">
+
+            <input id ="pass" type="password" placeholder="password" required="required">
+        
+        </div>
+
+    </div>
+
+    <div class = "flexcontainer">
+            <div id="one">
+        <ul *ngFor = "let text of logintext">
+
+        <li>
+            <h4>{{text.message}}</h4>
+           
+    
+        <button  class="button" name= {{text.name}} 
+        [@btnClick] = "text.state" (mousedown)="text.toggleState()" (mouseup)="text.toggleState()"><strong><span>{{text.name}}</span></strong></button>
+       
+
+        </li>
+
+        </ul>        
+        
+             </div>
+    </div>
+
+</div>
+
+</body>
