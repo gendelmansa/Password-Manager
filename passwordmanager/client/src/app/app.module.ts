@@ -2,9 +2,12 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router'
-import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
+import { HttpModule } from '@angular/http'
 
 import { AppComponent }  from './app.component';
+
+import { AuthService } from './services/auth.service'
 
 import { LoginComponent } from './components/login/login.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
@@ -28,7 +31,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes), 
     BrowserModule, 
     BrowserAnimationsModule, 
-    FormsModule 
+    ReactiveFormsModule,
+    HttpModule
   ],
   
   declarations: [ 
@@ -40,6 +44,8 @@ const appRoutes: Routes = [
     SidebarComponent, 
     ForgotComponent
   ],
+
+  providers: [AuthService],
 
   bootstrap:    [ AppComponent ]
 

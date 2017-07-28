@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition} from '@angular/animations';
  
 import { LoginText, LOGINTEXT } from './logintext'
+import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms'
 
 @Component({
   
@@ -41,17 +42,33 @@ import { LoginText, LOGINTEXT } from './logintext'
   templateUrl: './login.component.html',
   styleUrls:['./login.component.css']
 })
-export class LoginComponent  { 
+
+export class LoginComponent implements OnInit  { 
+  form: FormGroup
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
+
+  createForm() {
+    this.form = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    })
+  }
+
+  onLoginSubmit() {
+    const user = {
+      username: this.form.get('username').value,
+      password: this.form.get('password').value
+    }
+  }
 
   logintext = LOGINTEXT
   
   
   state:string = 'inactive'
    
-  toggleState(){
-  this.state = (this.state === 'active' ? 'inactive' : 'active');
-    setTimeout(()=>{this.state = (this.state === 'active' ? 'inactive' : 'inactive')}, 50)
-}
+
 
  
   newprofile = false;
@@ -62,6 +79,5 @@ export class LoginComponent  {
     this.newprofile=!this.newprofile
   }
 
-  constructor(){console.log(this.logintext)
-  console.log(this.logintext)}
+  ngOnInit() {}
 }

@@ -1,12 +1,24 @@
-
+<form [formGroup]="form" (submit) = "onRegisterSubmit()">
 <div class = "inputflex">
-    <div class ="container">
-        <input class = "input" placeholder = "email">
+    <div class ="container" >
+        <input type = "email" class = "input" name = "email" placeholder = "email" formControlName="email">
+        <ul *ngIf = "form.get('email').errors && form.get('email').touched">
+            <li *ngIf = "form.get('email').errors?.minlength">Your email must be at least 5 characters long</li>
+            <li *ngIf = "form.get('email').errors?.maxlength">Your email must be no more than 30 characters long</li>                 
+            <li *ngIf = "form.get('email').errors?.validateEmail">Please enter a valid email </li>
+        </ul>
+            
+    </div>
+    <div class = "container" >
+        <input class= "input" type = "password" placeholder  = "password" formControlName="password">
+        <ul *ngIf = "form.get('password').errors && form.get('password').touched">
+             <li *ngIf = "form.get('password').errors?.minlength">Your password must be at least 7 characters</li>
+             <li *ngIf = "form.get('password').errors?.maxlength">Your password must be at most 30 characters</li>
+             <li *ngIf = "form.get('password').errors?.validatePassword">Your password must contain at least one uppercase, lowercase, special character, and number</li>
+            </ul>
     </div>
     <div class = "container">
-        <input class= "input" placeholder  = "password">
-    </div>
-    <div class = "container">
-        <button class = "btn">create</button>
+        <button [disabled]= "!form.valid" class = "btn">create</button>
     </div>
 </div>
+</form>

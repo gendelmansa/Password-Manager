@@ -2,7 +2,7 @@
 
 <body>
 
-
+<form [formGroup]="form" (submit) = "onLoginSubmit()"
 <div class="parentflexcontainer">
 
     <div class = "icon">
@@ -23,7 +23,7 @@
         
             <div class = "childflex">
                 
-                <input id = "username" type="text" placeholder="email" required = "required">
+                <input id = "username" type="text" formControlName = "email" placeholder="email" required = "required">
             
             </div>
     </div>
@@ -32,7 +32,7 @@
         
         <div class = "childflex">
 
-            <input id ="pass" type="password" placeholder="password" required="required">
+            <input id ="pass" type="password" formControlName = "password" placeholder="password" required="required">
         
         </div>
 
@@ -46,8 +46,8 @@
             <h4>{{text.message}}</h4>
            
     
-        <button  class="button" name= {{text.name}} 
-        [@btnClick] = "text.state" (mousedown)="text.toggleState()" (mouseup)="text.toggleState()"><strong><span>{{text.name}}</span></strong></button>
+        <a routerLink = {{text.path}} routerLinkActive = "active" ><button  class="button" name= {{text.name}} 
+        [@btnClick] = "text.state" (mousedown)="text.toggleState()" (mouseup)="text.toggleState()"><strong><span>{{text.name}}</span></strong></button></a>
        
 
         </li>
